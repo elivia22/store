@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title> angstore</title>
+</head>
+<body>
+
+    <c-col xs="12">
+        <c-card class="mb-4">
+            <c-card-header>
+            <strong> View Order
+            </strong>
+
+            </c-card-header>
+            <c-card-body>
+
+                <div class="col-md-12">
+
+                    <!-- <button class="btn btn-primary" routerLink="/orders/add"> Add User</button> -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"> ID</th>
+                                <th scope="col"> PRODUCT NAME</th>
+                                <th scope="col"> CUSTOMER NAME</th>
+                                <th scope="col"> ORDER DATE</th>
+                                <th scope="col"> PAID DATE</th>
+                                <th scope="col"> QUANTITY</th>
+                                <th scope="col"> UNIT PRICE</th>
+                                <th scope="col"> TOTAL PRICE</th>
+                                <th scope="col"> DESCRIPTION</th>
+                                <th scope="col"> CREATED BY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders; let i=index">
+                                <!-- {{i + 1}} -->
+                                <th scope="row">{{order.order_id}} </th>
+                                <td> {{order.order_product_id}}</td>
+                                <!-- <td> {{order.order_name | titlecase}}</td> -->
+                                <td> {{order.order_customer_name}}</td>
+                                <td> {{order.order_placed_date}}</td>
+                                <td> {{order.order_paid_date}}</td>
+                                <td> {{order.order_quantity}}</td>
+                                <td> {{order.order_unit_price}}</td>
+                                <td> {{order.order_total_price}}</td>
+                                <td> {{order.order_description}}</td>
+                                <td> {{order.order_created_by}}</td>
+                                <td> 
+                                    <!-- <button class="btn btn-primary" routerLink="/orders/update/{{order.order_id}}"> Update</button> -->
+                                    <!-- <button class="btn btn-danger" (click)="deleteorder(order.order_id)"> Delete</button> -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </c-card-body>
+        </c-card>
+    </c-col>
+
+       
+        <!-- <button (click)="handleClick()" class="btn btn-primary" routerLink="/update/2"> Update</button> -->
+        <!-- <input type="text" [(ngModel)]="myname"/>  -->
+        <!-- <input type="text" (input)="handleInput($event)"/>  -->
+        <!-- <p>{{myname}}</p> -->
+
+</body>
+</html>

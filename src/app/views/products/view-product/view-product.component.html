@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title> angstore</title>
+</head>
+<body>
+
+    <c-col xs="12">
+        <c-card class="mb-4">
+            <c-card-header>
+            <strong> View Product
+            </strong>
+
+            </c-card-header>
+            <c-card-body>
+
+                <div class="col-md-12">
+
+                    <!-- <button class="btn btn-primary" routerLink="/products/add"> Add User</button> -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"> ID</th>
+                                <th scope="col"> NAME</th>
+                                <th scope="col"> PRICE</th>
+                                <th scope="col"> UNIT</th>
+                                <th scope="col"> BALANCE</th>
+                                <th scope="col"> DESCRIPTION</th>
+                                <th scope="col"> CREATED DATE</th>
+                                <th scope="col"> CREATED BY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products; let i=index">
+                                <!-- {{i + 1}} -->
+                                <th scope="row">{{product.product_id}} </th>
+                                <td> {{product.product_name}}</td>
+                                <!-- <td> {{product.product_name | titlecase}}</td> -->
+                                <td> {{product.product_price}}</td>
+                                <td> {{product.product_unit}}</td>
+                                <td> {{product.product_balance}}</td>
+                                <td> {{product.product_description}}</td>
+                                <td> {{product.product_created_date}}</td>
+                                <td> {{product.product_created_by}}</td>
+                                <td> 
+                                    <button class="btn btn-primary" routerLink="/products/update/{{product.product_id}}"> Update</button>
+                                    <button class="btn btn-danger" (click)="deleteProduct(product.product_id)"> Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </c-card-body>
+        </c-card>
+    </c-col>
+
+       
+        <!-- <button (click)="handleClick()" class="btn btn-primary" routerLink="/update/2"> Update</button> -->
+        <!-- <input type="text" [(ngModel)]="myname"/>  -->
+        <!-- <input type="text" (input)="handleInput($event)"/>  -->
+        <!-- <p>{{myname}}</p> -->
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> add user</title>
+</head>
+
+<body>
+
+    <c-col xs="12">
+        <c-card class="mb-4">
+            <c-card-header>
+                <strong> Update order </strong>
+            </c-card-header>
+            <c-card-body>
+
+                <div class="col-md-12">
+
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="order_name" class="form-label"> order_name</label>
+                                <input type="text" name="order_name" id="order_name" formControlName="order_name" class="form-control" [placeholder]="order?.order_name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="order_price" class="form-label"> order_price</label>
+                                <input type="text" name="order_price" id="order_price" formControlName="order_price" class="form-control" [placeholder]="order?.order_price" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="order_unit" class="form-label"> order_unit</label>
+                                <input type="text" name="order_unit" id="order_unit" formControlName="order_unit" class="form-control" [placeholder]="order?.order_unit" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="order_balance" class="form-label"> order_balance </label>
+                                <input type="text" name="order_balance" id="order_balance" formControlName="order_balance" class="form-control" [placeholder]="order?.order_balance" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="order_description" class="form-label">order_description </label>
+                                <input type="text" name="order_description" id="order_description" formControlName="order_description" class="form-control" [placeholder]="order?.order_description" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="order_created_date" class="form-label"> order_created_date</label>
+                                <input type="text" name="order_created_date" id="order_created_date" formControlName="order_created_date" class="form-control" [placeholder]="order?.order_created_date" required>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="order_created_by" class="form-label"> order_created_by</label>
+                                <input type="text" name="order_created_by" id="order_created_by" formControlName="order_created_by" class="form-control" [placeholder]="order?.order_created_by" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" value="submit" class="btn btn-primary w-100" [disabled]="!form.valid"> </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </c-card-body>
+        </c-card>
+    </c-col>
+</body>
+</html>
